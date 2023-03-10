@@ -5,7 +5,7 @@ var projectModalEl = $('#project-modal');
 var projectFormEl = $('#project-form');
 var projectNameInputEl = $('#project-name-input');
 var projectTypeInputEl = $('#project-type-input');
-var hourlyRateInputEl = $('#hourly-rate-input');
+var serviceRateInputEl = $('#service-rate-input');
 var dueDateInputEl = $('#due-date-input');
 
 // handle displaying the time
@@ -22,7 +22,7 @@ function printProjectData(name, type, hourlyRate, dueDate) {
 
   var projectTypeTdEl = $('<td>').addClass('p-2').text(type);
 
-  var rateTdEl = $('<td>').addClass('p-2').text(hourlyRate);
+  var rateTdEl = $('<td>').addClass('p-2').text(serviceRate);
 
   var dueDateTdEl = $('<td>').addClass('p-2').text(dueDate);
 
@@ -74,10 +74,10 @@ function handleProjectFormSubmit(event) {
 
   var projectName = projectNameInputEl.val().trim();
   var projectType = projectTypeInputEl.val().trim();
-  var hourlyRate = hourlyRateInputEl.val().trim();
+  var serviceRate = serviceRateInputEl.val().trim();
   var dueDate = dueDateInputEl.val().trim();
 
-  printProjectData(projectName, projectType, hourlyRate, dueDate);
+  printProjectData(projectName, projectType, serviceRate, dueDate);
 
   projectFormEl[0].reset();
 }
