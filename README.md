@@ -3,8 +3,9 @@
 Simple tracker for a hairdresser to keep track of the all her customers name, Service Type, Hourly Rate($), Service Date, Days until Service Date, Potential Total Earnings($)
 
 
-## Hair Service Tracker
+## Hair Service Tracker link 
 
+![link to hair service](http://127.0.0.1:5500/index.html)
 
 ## Usage
 
