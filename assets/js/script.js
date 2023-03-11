@@ -29,7 +29,7 @@ function printProjectData(name, type, hourlyRate, dueDate) {
   var daysToDate = moment(dueDate, 'MM/DD/YYYY').diff(moment(), 'days');
   var daysLeftTdEl = $('<td>').addClass('p-2').text(daysToDate);
 
-  var totalEarnings = calculateTotalEarnings(hourlyRate, daysToDate);
+  var totalEarnings = calculateTotalEarnings(serviceRate, daysToDate);
 
   // You can also chain methods onto new lines to keep code clean
   var totalTdEl = $('<td>')
@@ -57,8 +57,8 @@ function printProjectData(name, type, hourlyRate, dueDate) {
 }
 
 function calculateTotalEarnings(rate, days) {
-  var dailyTotal = rate * 8;
-  var total = dailyTotal * days;
+  var dailyTotal = rate;
+  var total = dailyTotal;
   return total;
 }
 
