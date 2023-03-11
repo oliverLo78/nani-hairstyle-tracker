@@ -15,7 +15,7 @@ function displayTime() {
 }
 
 // handle printing project data to the page
-function printProjectData(name, type, hourlyRate, dueDate) {
+function printProjectData(name, type, serviceRate, dueDate) {
   var projectRowEl = $('<tr>');
 
   var projectNameTdEl = $('<td>').addClass('p-2').text(name);
@@ -56,10 +56,10 @@ function printProjectData(name, type, hourlyRate, dueDate) {
   projectModalEl.modal('hide');
 }
 
-function calculateTotalEarnings(rate, days) {
+function calculateTotalEarnings(rate) {
   var dailyTotal = rate;
-  var total = dailyTotal;
-  return total;
+  //var total = dailyTotal;
+  return dailyTotal;
 }
 
 function handleDeleteProject(event) {
@@ -74,7 +74,7 @@ function handleProjectFormSubmit(event) {
 
   var projectName = projectNameInputEl.val().trim();
   var projectType = projectTypeInputEl.val().trim();
-  var serviceRate = serviceRateInputEl.val().trim();
+  var serviceRate = serviceRateInputEl.val()
   var dueDate = dueDateInputEl.val().trim();
 
   printProjectData(projectName, projectType, serviceRate, dueDate);
