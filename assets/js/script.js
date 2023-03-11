@@ -29,7 +29,7 @@ function printProjectData(name, type, serviceRate, dueDate) {
   var daysToDate = moment(dueDate, 'MM/DD/YYYY').diff(moment(), 'days');
   var daysLeftTdEl = $('<td>').addClass('p-2').text(daysToDate);
 
-  var totalEarnings = calculateTotalEarnings(serviceRate, daysToDate);
+  var totalEarnings = calculateTotalEarnings(serviceRate);
 
   // You can also chain methods onto new lines to keep code clean
   var totalTdEl = $('<td>')
@@ -58,8 +58,8 @@ function printProjectData(name, type, serviceRate, dueDate) {
 
 function calculateTotalEarnings(rate) {
   var dailyTotal = rate;
-  //var total = dailyTotal;
-  return dailyTotal;
+  var total = dailyTotal;
+  return total;
 }
 
 function handleDeleteProject(event) {
@@ -74,7 +74,7 @@ function handleProjectFormSubmit(event) {
 
   var projectName = projectNameInputEl.val().trim();
   var projectType = projectTypeInputEl.val().trim();
-  var serviceRate = serviceRateInputEl.val()
+  var serviceRate = serviceRateInputEl.val().trim();
   var dueDate = dueDateInputEl.val().trim();
 
   printProjectData(projectName, projectType, serviceRate, dueDate);
