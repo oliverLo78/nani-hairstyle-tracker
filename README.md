@@ -5,7 +5,7 @@ Simple tracker for a hairdresser to keep track of the all her customers name, Se
 
 ## Hair Service Tracker link 
 
-![link to hair service](http://127.0.0.1:5500/index.html)
+http://127.0.0.1:5500/index.html
 
 ## Usage
 
