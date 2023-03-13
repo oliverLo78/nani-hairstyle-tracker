@@ -8,6 +8,9 @@ var projectTypeInputEl = $('#project-type-input');
 var serviceRateInputEl = $('#service-rate-input');
 var dueDateInputEl = $('#due-date-input');
 
+// API key
+var apiKey = 'AIzaSyBudpSXAMX2kJBcw7x1Vd6aBIlG2ddtiN8';
+
 // handle displaying the time
 function displayTime() {
   var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
