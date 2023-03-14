@@ -8,6 +8,11 @@ var projectTypeInputEl = $('#project-type-input');
 var serviceRateInputEl = $('#service-rate-input');
 var dueDateInputEl = $('#due-date-input');
 
+// We have an initial static element
+var issueContainer = document.getElementById('issues');
+// Button to click to API call
+var fetchButton = document.getElementById('fetch-button');
+
 
 // handle displaying the time
 function displayTime() {
@@ -88,3 +93,21 @@ projectDisplayEl.on('click', '.delete-project-btn', handleDeleteProject);
 dueDateInputEl.datepicker({ minDate: 1 });
 
 setInterval(displayTime, 1000);
+
+// Re-usable functionality
+function getApi() {
+
+  // Set up the Fetch
+  var requestURL = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY";
+}
+
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 37.7749, lng: -122.4194},
+        zoom: 8
+      });
+  }
+
+
+
+

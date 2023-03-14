@@ -8,8 +8,9 @@
   <meta name="Description" content="Enter your description here" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Nani Hairstyle Tracker</title>
 </head>
@@ -164,7 +165,7 @@
       <footer class="col py-3 my-4"style="background-color: #d49ec7">
       <ul class="justify-content-start pb-4 mb-4">
         <span>Salon Lofts Dr. Phillips</span><br>
-        <a>Address: 7335 W Sand Lake Rd, Orlando, FL 32819</a><br>
+        <div class="map">Address: 7335 W Sand Lake Rd, Orlando, FL 32819</div><br>
         <a>Hours: Closes ⋅ 8 PM ⋅ Opens 8 AM</a><br>
         <a>phone: (407)616-6752</a><br>
         <a>email: anadasilva98@yahoo.com</a>
@@ -236,6 +237,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+  <script async defer src="./assets/js/script.js" onload="initMap()"></script>
+
   <script src="./assets/js/script.js"></script>
 </body>
 
