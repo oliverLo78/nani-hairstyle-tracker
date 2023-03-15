@@ -9,8 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  <link
+  rel="stylesheet"
+  href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+  />
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script> -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Nani Hairstyle Tracker</title>
 </head>
@@ -54,38 +57,14 @@
       <span class="sr-only">Next</span>
     </button>
   </div>
-
-
   <!-- Header jumbotron with time date displayed-->
   <header class="jumbotron jumbotron-fluid custom-jumbotron">
     <div class="container text-center">
       <h1>Nani Hairstyle Tracker</h1>
-      <h2>Current Time &amp; Date: <br /> <span id="time-display">00:00:00</span></h2>
+      <h2>Current Time &amp; Date: <br /><span id="time-display">00:00:00</span></h2>
     </div>
   </header>
-  <!-- Content section about hair care and general information -->
-  <section class="container my-5">
-    <div class="row">
-      <div class="col-12 col-md-8 col-xl-9">
-        <h2>Research Stylist</h2>
-        <h3>Never turn down a Free Consultation</h3>
-        <p>
-          Research Stylists and Colorists on Social Media
-          If you want to freshen up your 'do but don't have a stylist or colorist, Instagram is the best place to find one."Also, talk to your friends that you trust that have similar hair type and texture to you and get their recommendations," he adds. "Don’t be scared to stop people on the street with similar hair types and ask them who does their hair."
-        </p>
-        <p>Most hair pros should be willing to give you a brief consultation to talk about your desired cut or color; take them up on   it.
-          "If the stylist isn’t listening to what you want for your hair and isn’t willing to be collaborative, then it may be a good sign that they are not the best fit for you," Josh says. "If they are controlling too much of your end result without hearing you out, it may be time to jump out of the chair."
-        </p>
-      </div>
-      <div class="col-12 col-md-4 col-xl-3">
-        <h2>Haircut and Hair Color Tips</h2>
-        <ul>Don't Wash Your Hair Before Your Appointment</ul>
-        <ul>Bring Photos of What You Want—and Don't Want</ul>
-        <ul>Ask Your Hairstylist's Opinion</ul>
-        <ul>Have Realistic Expectations</ul>
-      </div>
-    </div>
-  </section>
+
   <!--Modal that user fills out with her client hair service information-->
   <main class="container-fluid">
     <div class="row">
@@ -106,7 +85,7 @@
             <li class="list-group-item">Hourly Rate</li>
           </ul>
           <div class="card-footer">
-            <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add
+            <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#service-modal">Add
               Client</button>
           </div>
         </div>
@@ -126,11 +105,43 @@
                 <th scope="col" class="p-3"></th>
               </tr>
             </thead>
-            <tbody id="project-display"></tbody>
+            <tbody id="service-display"></tbody>
           </table>
         </div>
       </section>
-
+      <!--Services List Services Form Service Name with jQuery-UI-Widgets -->
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-6">
+            <h3>Services Form</h3>
+            <br />
+            <form id="services-form">
+              <div class="form-group row">
+                <label for="skill" class="col-sm-4 col-form-label"
+                  >Service Name:
+                </label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="service-name" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="date" class="col-sm-4 col-form-label">Date: </label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="datepicker" autocomplete="off" />
+                </div>
+              </div>
+              <button type="submit" value="Submit" class="btn btn-info">
+                Submit
+              </button>
+            </form>
+          </div>
+          <div class="col-6">
+            <h3>List of Services:</h3>
+            <br />
+            <ul class="list-group" id="services-list"></ul>
+          </div>
+        </div>
+      </div>
         <!--Card Bootstrap componet so user can display hair services-->
       <section class="container-md">
         <div class="row">
@@ -159,6 +170,29 @@
           </div>
         </div>
       </div>
+        <!-- Content section about hair care and general information -->
+    <section class="container my-5">
+      <div class="row">
+        <div class="col-12 col-md-8 col-xl-9">
+          <h2>Research Stylist</h2>
+          <h3>Never turn down a Free Consultation</h3>
+          <p>
+          Research Stylists and Colorists on Social Media
+          If you want to freshen up your 'do but don't have a stylist or colorist, Instagram is the best place to find one."Also, talk to your friends that you trust that have similar hair type and texture to you and get their recommendations," he adds. "Don’t be scared to stop people on the street with similar hair types and ask them who does their hair."
+          </p>
+          <p>Most hair pros should be willing to give you a brief consultation to talk about your desired cut or color; take them up on   it.
+            "If the stylist isn’t listening to what you want for your hair and isn’t willing to be collaborative, then it may be a good sign that they are not the best fit for you," Josh says. "If they are controlling too much of your end result without hearing you out, it may be time to jump out of the chair."
+          </p>
+        </div>
+        <div class="col-12 col-md-4 col-xl-3">
+          <h2>Haircut and Hair Color Tips</h2>
+          <ul>Don't Wash Your Hair Before Your Appointment</ul>
+          <ul>Bring Photos of What You Want—and Don't Want</ul>
+          <ul>Ask Your Hairstylist's Opinion</ul>
+          <ul>Have Realistic Expectations</ul>
+        </div>
+      </div>
+    </section>
     </section>
     </div>
     <div class="container-fluid">
@@ -184,12 +218,12 @@
   </main>
 
   <!-- Modal that takes user input -->
-  <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
-    aria-labelledby="project-modal-form" aria-hidden="true">
+  <div class="modal fade custom-modal" id="service-modal" tabindex="-1" role="dialog"
+    aria-labelledby="service-modal-form" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="project-modal-form">Add a new client.</h5>
+          <h5 class="modal-title" id="service-modal-form">Add a new client.</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -197,13 +231,13 @@
         <form id="project-form">
           <div class="modal-body">
             <div class="form-group">
-              <label for="project-name-input">Client Name</label>
-              <input type="text" id="project-name-input" class="form-control" placeholder="Enter the client's name"
+              <label for="service-name-input">Client Name</label>
+              <input type="text" id="service-name-input" class="form-control" placeholder="Enter the client's name"
                 required />
             </div>
             <div class="form-group">
-              <label for="project-type-input">Hairstyle service Type</label>
-              <select class="form-control" id="project-type-input">
+              <label for="service-type-input">Hairstyle service Type</label>
+              <select class="form-control" id="service-type-input">
                 <option selected disabled>Pick one...</option>
                 <option value="Wash and Cut">Wash and Cut</option>
                 <option value="Highlight">Highlight</option>
@@ -233,12 +267,16 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+  <!-- jQuery UI <script> tag -->
+  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 
-  <script async defer src="./assets/js/script.js" onload="initMap()"></script>
+  <!-- <script async defer src="./assets/js/script.js" onload="initMap()"></script> -->
 
   <script src="./assets/js/script.js"></script>
 </body>

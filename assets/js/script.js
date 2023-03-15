@@ -1,17 +1,12 @@
 // save reference to important DOM elements
 var timeDisplayEl = $('#time-display');
-var projectDisplayEl = $('#project-display');
-var projectModalEl = $('#project-modal');
-var projectFormEl = $('#project-form');
-var projectNameInputEl = $('#project-name-input');
-var projectTypeInputEl = $('#project-type-input');
+var serviceDisplayEl = $('#service-display');
+var serviceModalEl = $('#service-modal');
+var serviceFormEl = $('#service-form');
+var serviceNameInputEl = $('#service-name-input');
+var serviceTypeInputEl = $('#service-type-input');
 var serviceRateInputEl = $('#service-rate-input');
 var dueDateInputEl = $('#due-date-input');
-
-// We have an initial static element
-var issueContainer = document.getElementById('issues');
-// Button to click to API call
-var fetchButton = document.getElementById('fetch-button');
 
 
 // handle displaying the time
@@ -21,12 +16,12 @@ function displayTime() {
 }
 
 // handle printing project data to the page
-function printProjectData(name, type, serviceRate, dueDate) {
-  var projectRowEl = $('<tr>');
+function printServiceData(name, type, serviceRate, dueDate) {
+  var serviceRowEl = $('<tr>');
 
-  var projectNameTdEl = $('<td>').addClass('p-2').text(name);
+  var serviceNameTdEl = $('<td>').addClass('p-2').text(name);
 
-  var projectTypeTdEl = $('<td>').addClass('p-2').text(type);
+  var serviceTypeTdEl = $('<td>').addClass('p-2').text(type);
 
   var rateTdEl = $('<td>').addClass('p-2').text(serviceRate);
 
@@ -42,24 +37,24 @@ function printProjectData(name, type, serviceRate, dueDate) {
     .addClass('p-2')
     .text('$' + totalEarnings);
 
-  var deleteProjectBtn = $('<td>')
+  var deleteServiceBtn = $('<td>')
     .addClass('p-2 delete-project-btn text-center')
     .text('X');
 
   // By listing each `<td>` variable as an argument, each one will be appended in that order
-  projectRowEl.append(
-    projectNameTdEl,
-    projectTypeTdEl,
+  serviceRowEl.append(
+    serviceNameTdEl,
+    serviceTypeTdEl,
     rateTdEl,
     dueDateTdEl,
     daysLeftTdEl,
     totalTdEl,
-    deleteProjectBtn
+    deleteServiceBtn
   );
 
-  projectDisplayEl.append(projectRowEl);
+  serviceDisplayEl.append(serviceRowEl);
 
-  projectModalEl.modal('hide');
+  serviceModalEl.modal('hide');
 }
 
 function calculateTotalEarnings(rate) {
@@ -68,45 +63,120 @@ function calculateTotalEarnings(rate) {
   return total;
 }
 
-function handleDeleteProject(event) {
+function handleDeleteService(event) {
   console.log(event.target);
   var btnClicked = $(event.target);
   btnClicked.parent('tr').remove();
 }
 
-// handle project form submission
-function handleProjectFormSubmit(event) {
+// handle service form submission
+function handleServiceFormSubmit(event) {
   event.preventDefault();
 
-  var projectName = projectNameInputEl.val().trim();
-  var projectType = projectTypeInputEl.val().trim();
+  var serviceName = serviceNameInputEl.val().trim();
+  var serviceType = serviceTypeInputEl.val().trim();
   var serviceRate = serviceRateInputEl.val().trim();
   var dueDate = dueDateInputEl.val().trim();
 
-  printProjectData(projectName, projectType, serviceRate, dueDate);
+  printServiceData(serviceName, serviceType, serviceRate, dueDate);
 
-  projectFormEl[0].reset();
+  serviceFormEl[0].reset();
 }
 
-projectFormEl.on('submit', handleProjectFormSubmit);
-projectDisplayEl.on('click', '.delete-project-btn', handleDeleteProject);
+serviceFormEl.on('submit', handleServiceFormSubmit);
+serviceDisplayEl.on('click', '.delete-service-btn', handleDeleteService);
 dueDateInputEl.datepicker({ minDate: 1 });
 
 setInterval(displayTime, 1000);
 
+
+var formEl = $('#services-form');
+var nameInputEl = $('#service-name');
+var dateInputEl = $('#datepicker');
+var servicesListEl = $('#services-list');
+
+var printServices = function (name, date) {
+  var listEl = $('<li>');
+  var listDetail = name.concat(' on ', date);
+  listEl.addClass('list-group-item').text(listDetail);
+  listEl.appendTo(servicesListEl);
+};
+
+var handleFormSubmit = function (event) {
+  event.preventDefault();
+
+  var nameInput = nameInputEl.val();
+  var dateInput = dateInputEl.val();
+
+  if (!nameInput || !dateInput) {
+    console.log('You need to fill out the form!');
+    return;
+  }
+
+  printServices(nameInput, dateInput);
+
+  // resets form
+  nameInputEl.val('');
+  dateInputEl.val('');
+};
+
+formEl.on('submit', handleFormSubmit);
+
+// Autocomplete widget
+$(function () {
+  var servicesNames = [
+    'Wash and Cut',
+    'Highlight',
+    'Color and Trim',
+    'Permanent Wave',
+    'Straightener',
+    'Relaxer',
+    'Womens Cuts',
+    'Mens Cuts',
+    'Childrens Cuts',
+    'Specialty Haircutting',
+    'All Over Color',
+    'Color Retouch',
+    'Partial Foil Highlights',
+    'Full Foil',
+    'Face Frame Highlights',
+    'Balayage/Foilayage',
+    'Double Process Color',
+    'Color Correction: Priced By Consultation Only',
+  ];
+  $('#service-name').autocomplete({
+    source: servicesNames,
+  });
+});
+
+// Datepicker widget
+$(function () {
+  $('#datepicker').datepicker({
+    changeMonth: true,
+    changeYear: true,
+  });
+});
+
+
+
+
+
+
+
+
 // Re-usable functionality
-function getApi() {
+// function getApi() {
 
   // Set up the Fetch
-  var requestURL = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY";
-}
+//   var requestURL = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY";
+// }
 
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 37.7749, lng: -122.4194},
-        zoom: 8
-      });
-  }
+//   function initMap() {
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//         center: {lat: 37.7749, lng: -122.4194},
+//         zoom: 8
+//       });
+//   }
 
 
 
