@@ -9,12 +9,9 @@ Simple tracker for a hairdresser to keep track of the all her customers name, Se
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Click on the form to add your customer's name, type of hair service, the hourly rate, date of service, and total earnings to add that customer to the tracker.
 
-for use just click any of the items on the menu navigation at the top
-right corner to find out about me or simply scroll down to the work 
-section and click any one the images to visit some of the projects 
-I have been working on. 
+you can also input the type of service, a date you will like to get your service and it will render it on the website
 
 ## Screenshots
 
