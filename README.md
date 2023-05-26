@@ -20,3 +20,10 @@ you can also input the type of service, a date you will like to get your service
 ![Screenshot 2023-03-10 191906](https://user-images.githubusercontent.com/109435666/224452706-fa1cba4e-6238-446f-b290-eaf1da5c6f04.png)
 
 ![Screenshot 2023-03-10 192009](https://user-images.githubusercontent.com/109435666/224452726-80472255-3f33-426c-895f-812012622d15.png)
+
+## Technologies 
+
+[![HTML5 Shield](https://img.shields.io/badge/HTML5-E34F26?&style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)  
+[![CSS Shield](https://img.shields.io/badge/CSS-1572B6?&style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) 
+[![JavaScript Shield](https://img.shields.io/badge/JavaScript-F7DF1E?&style=for-the-badge&logo=javascript&logoColor=272727)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![jQuery Shield](https://img.shields.io/badge/jQuery-E34F26?&style=for-the-badge&logo=jQuery&logoColor=grey)](https://developer.mozilla.org/en-US/docs/Web/jQuery)
