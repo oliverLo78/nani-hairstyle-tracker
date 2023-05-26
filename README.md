@@ -5,7 +5,7 @@ Simple tracker for a hairdresser to keep track of the all her customers name, Se
 
 ## Hair Service Tracker link 
 
-https://oliverlo78.github.io/nani-hairstyle-tracker/
+![Hairstyle tracker](https://oliverlo78.github.io/nani-hairstyle-tracker/)
 
 ## Usage
 
