@@ -26,4 +26,4 @@ you can also input the type of service, a date you will like to get your service
 [![HTML5 Shield](https://img.shields.io/badge/HTML5-E34F26?&style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)  
 [![CSS Shield](https://img.shields.io/badge/CSS-1572B6?&style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) 
 [![JavaScript Shield](https://img.shields.io/badge/JavaScript-F7DF1E?&style=for-the-badge&logo=javascript&logoColor=272727)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![jQuery Shield](https://img.shields.io/badge/jQuery-E34F26?&style=for-the-badge&logo=jQuery&logoColor=grey)](https://developer.mozilla.org/en-US/docs/Web/jQuery)
+[![jQuery Shield](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
